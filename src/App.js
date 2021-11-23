@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import SignIn from "./components/SignIn";
+import Title from "./components/Title";
 import { useState } from "react";
 import userContext from "./contexts/userContext";
 
@@ -11,7 +12,7 @@ function App() {
     <BrowserRouter>
       <userContext.Provider value={{ user, setUser }}>
         <div className="App">
-          <h1>NC News</h1>
+          <Title />
           <Nav />
           <Routes>
             <Route path="/user/signin" element={<SignIn />}></Route>
