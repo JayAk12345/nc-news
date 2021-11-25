@@ -3,12 +3,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import SignIn from "./components/SignIn";
 import Title from "./components/Title";
-import Home from "./components/Home";
+import ShowTopics from "./components/ShowTopics";
+import ShowArticles from "./components/ShowArticles";
 import { useState } from "react";
 import userContext from "./contexts/userContext";
 
 function App() {
   const [user, setUser] = useState("Jay123");
+  const [topic, setTopic] = useState(null);
 
   return (
     <BrowserRouter>
@@ -16,8 +18,11 @@ function App() {
         <div className="App">
           <Title />
           <Nav />
+          <ShowTopics topic={topic} setTopic={setTopic} />
           <Routes>
-            <Route path="/" element={<Home />}></Route>
+            <Route path="/" element={<ShowArticles />}></Route>
+            <Route path="/topics/:slug/articles" element={<SignIn />}></Route>
+            <Route path="/article/:id" element={<SignIn />}></Route>
             <Route path="/user/signin" element={<SignIn />}></Route>
           </Routes>
         </div>
