@@ -17,12 +17,13 @@ const ShowTopics = (topic, setTopic) => {
     <select
       id="topic"
       name="category"
+      defaultValue="selectTopic"
       onChange={(e) => {
         const selectedTopic = e.target.value;
         navigate(`/topics/${selectedTopic}/articles`);
       }}
     >
-      <option value="select" selected disabled>
+      <option value="selectTopic" disabled>
         Please select a topic
       </option>
       <option value="all">All</option>
