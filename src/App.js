@@ -10,7 +10,6 @@ import userContext from "./contexts/userContext";
 
 function App() {
   const [user, setUser] = useState("Jay123");
-  const [topic, setTopic] = useState(null);
 
   return (
     <BrowserRouter>
@@ -18,10 +17,13 @@ function App() {
         <div className="App">
           <Title />
           <Nav />
-          <ShowTopics topic={topic} setTopic={setTopic} />
+          <ShowTopics />
           <Routes>
             <Route path="/" element={<ShowArticles />}></Route>
-            <Route path="/topics/:slug/articles" element={<SignIn />}></Route>
+            <Route
+              path="/topics/:slug/articles"
+              element={<ShowArticles />}
+            ></Route>
             <Route path="/article/:id" element={<SignIn />}></Route>
             <Route path="/user/signin" element={<SignIn />}></Route>
           </Routes>
