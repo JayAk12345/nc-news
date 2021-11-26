@@ -21,3 +21,9 @@ export const getArticles = (topic_slug) => {
     });
   }
 };
+
+export const getOneArticle = (id) => {
+  return newsApi.get(`/articles/${id}`).then(({ data }) => {
+    return data.article;
+  });
+};
