@@ -33,3 +33,9 @@ export const getComments = (id) => {
     return data.comments;
   });
 };
+
+export const getVotes = (id) => {
+  return newsApi.get(`/articles/${id}`).then(({ data }) => {
+    return data.article.votes;
+  });
+};
