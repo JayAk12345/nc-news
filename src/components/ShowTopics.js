@@ -13,14 +13,11 @@ const ShowTopics = (topic, setTopic) => {
     });
   }, []);
 
-  console.log(topicList);
-
   return (
     <select
       id="topic"
       name="category"
       onChange={(e) => {
-        console.log(e);
         const selectedTopic = e.target.value;
         navigate(`/topics/${selectedTopic}/articles`);
       }}
