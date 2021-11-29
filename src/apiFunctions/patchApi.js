@@ -17,4 +17,6 @@ export const incVotes = (id, vote) => {
     .catch((err) => {
       console.log(err);
     });
+  //remove this as wont change file
+  //handle in componenrt
 };
