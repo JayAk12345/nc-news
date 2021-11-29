@@ -8,28 +8,33 @@ import ShowArticles from "./components/ShowArticles";
 import Article from "./components/Article";
 import { useState } from "react";
 import userContext from "./contexts/userContext";
+import { useContext } from "react";
 
 function App() {
-  const [user, setUser] = useState("Jay123");
+  const [user, setUser] = useState("weegembump");
 
   return (
     <BrowserRouter>
-      <userContext.Provider value={{ user, setUser }}>
-        <div className="App">
-          <Title />
-          <Nav />
-          <ShowTopics />
-          <Routes>
-            <Route path="/" element={<ShowArticles />}></Route>
-            <Route
-              path="/topics/:slug/articles"
-              element={<ShowArticles />}
-            ></Route>
-            <Route path="/article/:id" element={<Article />}></Route>
-            <Route path="/user/signin" element={<SignIn />}></Route>
-          </Routes>
-        </div>
-      </userContext.Provider>
+      <div className="App">
+        <Title />
+        <Nav />
+        <ShowTopics />
+        <Routes>
+          <Route path="/" element={<ShowArticles />}></Route>
+          <Route
+            path="/topics/:slug/articles"
+            element={<ShowArticles />}
+          ></Route>
+          <Route
+            path="/article/:id"
+            element={<Article user={user} setUser={setUser} />}
+          ></Route>
+          <Route
+            path="/user/signin"
+            element={<SignIn user={user} setUser={setUser} />}
+          ></Route>
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }
