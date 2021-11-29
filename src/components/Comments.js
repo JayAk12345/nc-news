@@ -16,7 +16,7 @@ const Comments = () => {
       <h2>Comments:</h2>
       {commentsList.map((comment) => {
         return (
-          <section>
+          <section key={comment.comment_id}>
             <p>{comment.body}</p>
             <p>{comment.author}</p>
             <p>{comment.votes}</p>
