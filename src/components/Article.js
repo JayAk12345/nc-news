@@ -22,6 +22,7 @@ const Article = ({ user, setUser }) => {
     const comment = e.target[0].value;
     postComment(comment, id, user).then((res) => {
       console.log(res);
+      <p>Sent</p>;
     });
   };
 
