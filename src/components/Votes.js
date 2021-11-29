@@ -9,11 +9,12 @@ const Votes = () => {
   useEffect(() => {
     getVotes(id).then((votes) => {
       setArticleVotes(votes);
+      console.log(articleVotes);
     });
-  });
+  }, [articleVotes]);
   return (
     <section>
-      <p>Votes:{articleVotes}</p>
+      <p>{articleVotes}</p>
     </section>
   );
 };
