@@ -10,6 +10,7 @@ import Votes from "./Votes";
 const Article = ({ user, setUser }) => {
   const [article, setArticle] = useState({});
   const { id } = useParams();
+  const [articleVotes, setArticleVotes] = useState("");
 
   useEffect(() => {
     getOneArticle(id).then((article) => {
@@ -22,7 +23,6 @@ const Article = ({ user, setUser }) => {
     const comment = e.target[0].value;
     postComment(comment, id, user).then((res) => {
       console.log(res);
-      <p>Sent</p>;
     });
   };
 
@@ -31,10 +31,12 @@ const Article = ({ user, setUser }) => {
       <h2>{article.title}</h2>
       <p>{article.body}</p>
       <p>{article.author}</p>
-      <Votes />
+      <Votes articleVotes={articleVotes} setArticleVotes={setArticleVotes} />
       <button
         onClick={() => {
-          incVotes(id, +1);
+          incVotes(id, +1).then((votes) => {
+            setArticleVotes(votes);
+          });
         }}
       >
         upvote!
