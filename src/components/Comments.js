@@ -2,14 +2,13 @@ import { useEffect, useState } from "react";
 import { getComments } from "../apiFunctions/getApi";
 import { useParams } from "react-router-dom";
 
-const Comments = () => {
-  const [commentsList, setCommentsList] = useState([]);
+const Comments = ({ commentsList, setCommentsList }) => {
   const { id } = useParams();
   useEffect(() => {
     getComments(id).then((comments) => {
       setCommentsList(comments);
     });
-  }, []);
+  }, [commentsList]);
 
   return (
     <section className="comments">

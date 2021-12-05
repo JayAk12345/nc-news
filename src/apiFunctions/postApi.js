@@ -5,7 +5,6 @@ const newsApi = axios.create({
 });
 
 export const postComment = (comment, id, user) => {
-  console.log(comment, "comment check");
   return newsApi
     .post(`/articles/${id}/comments`, { body: comment, username: user })
     .then((res) => {

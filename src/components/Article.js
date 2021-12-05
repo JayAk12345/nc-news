@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getOneArticle } from "../apiFunctions/getApi";
+import { getComments, getOneArticle } from "../apiFunctions/getApi";
 import { incVotes } from "../apiFunctions/patchApi";
 import { postComment } from "../apiFunctions/postApi";
 import { useParams } from "react-router-dom";
@@ -11,6 +11,7 @@ const Article = ({ user, setUser }) => {
   const [article, setArticle] = useState({});
   const { id } = useParams();
   const [articleVotes, setArticleVotes] = useState("");
+  const [commentsList, setCommentsList] = useState([]);
 
   useEffect(() => {
     getOneArticle(id).then((article) => {
@@ -48,7 +49,7 @@ const Article = ({ user, setUser }) => {
         <input type="input" id="comment" name="comment"></input>
         <button type="submit">Submit</button>
       </form>
-      <Comments />
+      <Comments commentsList={commentsList} setCommentsList={setCommentsList} />
     </section>
   );
 };
