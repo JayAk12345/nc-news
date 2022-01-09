@@ -28,7 +28,7 @@ const Article = ({ user, setUser }) => {
   };
 
   return (
-    <section className="article">
+    <section className="fullArticle">
       <h2>{article.title}</h2>
       <p>{article.body}</p>
       <p>{article.author}</p>
