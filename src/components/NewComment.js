@@ -7,8 +7,6 @@ const NewComment = (e) => {
       return res;
     });
   });
-
-  return <section></section>;
 };
 
 export default NewComment;
