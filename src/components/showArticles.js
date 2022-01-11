@@ -16,20 +16,20 @@ const ShowArticles = () => {
   return (
     <section className="topicSelector">
       <section className="articles">
-        <ol>
+        <ol className="articleContainer">
           {articles.map((article) => {
             return (
-              <li>
+              <p className="article">
                 <Link
                   to={`/article/${article.article_id}`}
                   key={article.article_id}
                 >
                   {article.title}
                 </Link>
-                <p>Author: {article.author}</p>
+                <p className="author">Author: {article.author}</p>
                 <p>Date: {article.created_at.substring(0, 10)}</p>
                 <p>Votes: {article.votes}</p>
-              </li>
+              </p>
             );
           })}
         </ol>

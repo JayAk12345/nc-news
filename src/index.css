@@ -1,1 +1,35 @@
+/* * {
+  height: 0;
+  width: 0;
+} */
 
+.title {
+  display: block;
+  top: 0;
+  background-color: #db222a;
+}
+
+nav {
+  background-color: #db222a;
+}
+
+nav link {
+  font-size: 200px;
+}
+
+.articleContainer {
+  display: flex;
+  /* grid-template-columns: 30% 30% 30%; */
+  flex-flow: row wrap;
+  column-gap: 10%;
+}
+
+.article {
+  border: solid;
+  width: 25%;
+  background-color: #db222a;
+}
+
+.author {
+  font-style: italic;
+}
