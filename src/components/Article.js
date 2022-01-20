@@ -31,7 +31,7 @@ const Article = ({ user, setUser }) => {
     <section className="fullArticle">
       <h2>{article.title}</h2>
       <p>{article.body}</p>
-      <p>{article.author}</p>
+      <p>Author: {article.author}</p>
       <Votes articleVotes={articleVotes} setArticleVotes={setArticleVotes} />
       <button
         onClick={() => {
