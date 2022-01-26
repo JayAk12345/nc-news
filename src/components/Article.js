@@ -29,7 +29,7 @@ const Article = ({ user, setUser }) => {
 
   return (
     <section className="fullArticle">
-      <h2>{article.title}</h2>
+      <h2 className="articleTitle">{article.title}</h2>
       <p>{article.body}</p>
       <p>Author: {article.author}</p>
       <Votes articleVotes={articleVotes} setArticleVotes={setArticleVotes} />
@@ -46,7 +46,12 @@ const Article = ({ user, setUser }) => {
       <h3>New comment:</h3>
       <form onSubmit={newComment} id="comment">
         <label for="comment">New comment:</label>
-        <input type="input" id="comment" name="comment"></input>
+        <input
+          type="input"
+          id="comment"
+          name="comment"
+          placeholder="comment..."
+        ></input>
         <button type="submit">Submit</button>
       </form>
       <Comments commentsList={commentsList} setCommentsList={setCommentsList} />

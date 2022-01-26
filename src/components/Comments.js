@@ -13,7 +13,7 @@ const Comments = ({ commentsList, setCommentsList }) => {
 
   return (
     <section className="comments">
-      <h2>Comments:</h2>
+      <h2 className="commentTitle">Comments:</h2>
       {commentsList.map((comment) => {
         return (
           <section key={comment.comment_id}>
