@@ -1,3 +1,6 @@
+Description: NC News brings you interesting articles on a range of issues. There are currently three topics and the drop down menu can be used to filter the articles. On the article page a user can leave/delete comments as well as upvoting articles.
+This project is currently in progress and will continue to be improved.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
