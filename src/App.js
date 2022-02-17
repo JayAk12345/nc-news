@@ -11,7 +11,7 @@ import userContext from "./contexts/userContext";
 import { useContext } from "react";
 
 function App() {
-  const [user, setUser] = useState("weegembump");
+  const [user, setUser] = useState(null);
 
   return (
     <BrowserRouter>
