@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const newsApi = axios.create({
-  baseURL: "https://nc-news-example-backend.herokuapp.com/api",
+  baseURL: "https://nc-news-vggw.onrender.com/api",
 });
 
 export const postComment = (comment, id, user) => {

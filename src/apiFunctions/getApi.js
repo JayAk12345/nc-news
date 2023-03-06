@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const newsApi = axios.create({
-  baseURL: "https://nc-news-example-backend.herokuapp.com/api",
+  baseURL: "https://nc-news-vggw.onrender.com/api",
 });
 
 export const getTopics = () => {
@@ -38,4 +38,16 @@ export const getVotes = (id) => {
   return newsApi.get(`/articles/${id}`).then(({ data }) => {
     return data.article.votes;
   });
+};
+
+export const getUserByUsername = () => {
+  return newsApi
+    .get("/api/users/weegenbump")
+    .then((res) => {
+      console.log(res, "getUserByUsername");
+      return res;
+    })
+    .catch((err) => {
+      console.log(err, "err");
+    });
 };
